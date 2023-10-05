@@ -6,6 +6,6 @@ jobs:
       - bash: echo "Hello World!"
   - job: windows-latest
     pool:
-      vmImage: 'linux-latest'
+      vmImage: 'windows-latest'
     steps:
       - bash: echo "Hello World!"
