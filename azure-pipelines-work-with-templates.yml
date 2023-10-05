@@ -1,5 +1,6 @@
+# File: azure-pipelines.yml
 trigger:
-  - features/working-with-templates
+  - main
 
 pool:
   vmImage: 'ubuntu-latest'
