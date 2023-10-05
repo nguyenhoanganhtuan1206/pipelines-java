@@ -6,7 +6,7 @@ on:
       - main
       - features/*
   schedule:
-    - cron: '0 0 * * *' # every day at midnight
+    - cron: '0 * * * *' # every hour
 
 jobs:
   delete-artifacts:
