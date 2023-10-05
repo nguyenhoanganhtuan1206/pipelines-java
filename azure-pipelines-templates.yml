@@ -1,27 +1,13 @@
-# Maven
-# Build your Java project and run tests with Apache Maven.
-# Add steps that analyze code, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/java
-
-trigger:
-  batch: true
-  branches:
-    include: 
-      - features/work-with-templates
-pr: 
-  - main
+# File: azure-pipelines.yml
 
 jobs:
-  - job: WithMultipleOS
-    strategy:
-      matrix:
-        linux:
-          vmImage: "ubuntu-latest"
-        windows:
-          vmImage: "windows-latest"
-      maxParallel: 2
-
+  - job: Linux
     pool:
-      vmImage: $(vmImage)
+      vmImage: 'ubuntu-latest'
     steps:
-      - template: templates/include-npm-steps.yml
+      - template: templates/include-npm-steps.yml  # Template reference
+  - job: Windows
+    pool:
+      vmImage: 'windows-latest'
+    steps:
+      - template: templates/include-npm-steps.yml  # Template reference
