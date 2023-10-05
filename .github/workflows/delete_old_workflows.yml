@@ -1,8 +1,13 @@
 name: 'Delete old workflows'
 
 on:
+  push:
+    branches:
+      - main
+      - features/*
   schedule:
     - cron: '0 0 * * *' # every day at midnight
+
 jobs:
   delete-artifacts:
     runs-on: ubuntu-latest
