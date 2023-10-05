@@ -11,9 +11,9 @@ strategy:
     jdk11_linux: 
       imageName: "ubuntu-latest"
       jdkVersion: 11
-    jdk17_window:
+    jdk10_window:
       imageName: "windows-latest"
-      jdkVersion: 17
+      jdkVersion: 10
   maxParallel: 2
   
 pool:
