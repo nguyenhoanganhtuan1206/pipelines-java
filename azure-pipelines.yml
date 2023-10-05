@@ -27,6 +27,15 @@ strategy:
 pool:
   vmImage: $(imageName)
 
+schedules:
+  - cron: '0 0 * * *' # every day in the midnight
+    displayName: 'Delete old workflows'
+    branches:
+      include:
+        - main
+    always: true
+    batch: true
+
 steps:
 - task: Maven@3
   inputs:
