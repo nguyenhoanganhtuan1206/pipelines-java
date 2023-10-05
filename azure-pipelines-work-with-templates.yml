@@ -6,7 +6,16 @@ pool:
   vmImage: 'ubuntu-latest'
 
 stages:
-  - stage: Install
+  - stage: Install NodeJS
+    jobs:
+      - job: nodejsinstall
+        steps:
+          - task: NodeTool@0
+            inputs:
+              versionSource: '16.14.2'
+              checkLatest: true
+
+  - stage: Install npm
     jobs:
       - job: npminstall
         steps:
