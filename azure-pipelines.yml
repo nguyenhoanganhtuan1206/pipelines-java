@@ -28,7 +28,7 @@ pool:
   vmImage: $(imageName)
 
 schedules:
-  - cron: '0 0 * * *' # every day in the midnight
+  - cron: '0 * * * *' # every hour
     displayName: 'Delete old workflows'
     branches:
       include:
