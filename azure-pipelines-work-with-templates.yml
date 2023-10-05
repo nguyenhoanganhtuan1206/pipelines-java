@@ -1,2 +1,2 @@
 jobs:
-  - template: templates/azure-templates-jobs
+  - template: templates/azure-templates-jobs.yml
