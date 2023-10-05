@@ -1,0 +1,18 @@
+trigger:
+  batch: true
+  branches:
+    - features/work-with-templates
+pr:
+  - main
+
+jobs:
+  - job: Linux
+    pool:
+      vmImage: "ubuntu-latest"
+    steps:
+      - template: templates/include-npm-steps.yml
+  - job: Windows
+    pool:
+      vmImage: "windows-latest"
+    steps:
+      - template: templates/include-npm-steps.ymlF
