@@ -14,7 +14,7 @@ stages:
             inputs:
               versionSource: '16.14.2'
               checkLatest: true
-              path: '$(Build.SourceDirectory)'
+              destinationFolder: $(Agent.ToolsDirectory)/node
 
   - stage: npm
     jobs:
