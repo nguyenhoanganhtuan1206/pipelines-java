@@ -1,7 +1,7 @@
 stages:
   - stage: Install
     jobs:
-      - job: npmInstall
+      - job: npminstall
         steps:
           - task: Npm@1
             inputs:
