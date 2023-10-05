@@ -1,0 +1,11 @@
+jobs:
+  - job: ubuntu-latest
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+      - bash: echo "Hello World!"
+  - job: windows-latest
+    pool:
+      vmImage: 'linux-latest'
+    steps:
+      - bash: echo "Hello World!"
