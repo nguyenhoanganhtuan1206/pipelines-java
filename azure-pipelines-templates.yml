@@ -1,2 +1,9 @@
-jobs:
-  - template: templates/include-npm-steps.yml
+stages:
+  - stage: Install
+    jobs:
+      - job: npmInstall
+        steps:
+          - task: Npm@1
+            inputs:
+              command: 'install'
+  - template: templates/azure-templates-stages.yml

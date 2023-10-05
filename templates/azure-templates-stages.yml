@@ -1,0 +1,6 @@
+stages:
+  - stage: Build
+    jobs:
+      - job: build
+        steps:
+          - script: npm run build
