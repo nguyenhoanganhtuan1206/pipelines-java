@@ -1,0 +1,13 @@
+name: 'Delete old workflows'
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # every day at midnight
+jobs:
+  delete-artifacts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: kolpav/purge-artifacts-action@v1
+        with:
+          token: ${{ secrets.TOKEN_EXECUTE }}
+          expire-in: 7days # workflow will be deleted automatically if they are older than 7 days
