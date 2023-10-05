@@ -1,2 +1,15 @@
-jobs:
-  - template: templates/azure-templates-jobs.yml
+trigger:
+  - features/working-with-templates
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+stages:
+  - stage: Install
+    jobs:
+      - job: npmInstall
+        steps:
+          - task: Npm@1
+            inputs:
+              command: 'install'
+  - template: templates/azure-templates-stages.yml
