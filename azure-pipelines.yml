@@ -4,11 +4,15 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
 
 trigger:
-  - main
-  - releases/*
+  batch: true
+  branches:
+    include:  
+      - main
+      - releases/*
 pr:
   - main
   - releases/*
+  - features/*
 
 strategy:
   matrix:
