@@ -9,7 +9,7 @@ stages:
     jobs:
       - job: npmInstall
         steps:
-          - task: Npm@1
-            inputs:
-              command: 'install'
+        - task: Npm@1
+          inputs:
+            command: 'install'
   - template: templates/azure-templates-stages.yml
