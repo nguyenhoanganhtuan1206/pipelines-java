@@ -15,4 +15,4 @@ jobs:
     pool:
       vmImage: "windows-latest"
     steps:
-      - template: templates/include-npm-steps.ymlF
+      - template: templates/include-npm-steps.yml
