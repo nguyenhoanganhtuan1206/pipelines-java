@@ -1,9 +1,15 @@
+trigger:
+  - main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
 stages:
   - stage: Install
     jobs:
-    - job: npminstall
-      steps:
-        - task: Npm@1
-          inputs:
+      - job: npmInstall
+        steps:
+          - task: Npm@1
+            inputs:
               command: 'install'
   - template: templates/azure-templates-stages.yml
