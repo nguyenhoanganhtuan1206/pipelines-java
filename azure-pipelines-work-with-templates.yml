@@ -1,18 +1,25 @@
 trigger:
   - features/working-with-templates
 
-parameters:
-  - name: listOfFruits
-    type: object
-    default:
-      - fruitName: 'apple'
-        colors: ['red', 'green']
-      - fruitName: 'lemon'
-        colors: ['yellow']
-
 jobs:
-  - job: displayFruits
+  - job: displayListOfStrings
     steps:
+      - template: templates-practice/parameters/templates-parameters-define-names.yml
+        parameters:
+          listOfStrings:
+            - 'Anh'
+            - 'Tuan'
+      - ${{ each name in parameters.listOfStrings }}:
+          - script: echo ${{ name }}
+  - job: displayListOfFruits
+    steps:
+      - template: templates-practice/parameters/templates-parameters-define-names.yml
+        parameters:
+          listOfFruits:
+            - fruitName: 'apple'
+              colors: [ 'red', 'green' ]
+            - fruitName: 'lemon'
+              colors: [ 'yellow' ]
       - ${{ each fruitValue in parameters.listOfFruits }}:
           - ${{ each colorValue in fruitValue.colors }}:
               - script: echo ${{ fruitValue.fruitName }}, ${{ colorValue }}
