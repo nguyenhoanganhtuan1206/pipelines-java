@@ -1,2 +1,2 @@
 steps:
-  - templates: templates-practice/templates-parameters-data-type.yml
+  - template: templates-practice/templates-parameters-data-type.yml
