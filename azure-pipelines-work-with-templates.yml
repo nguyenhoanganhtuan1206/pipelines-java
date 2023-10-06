@@ -2,16 +2,13 @@ trigger:
   - features/working-with-templates
 
 jobs:
-  - job: countString
+  - job: 'Display my name'
     steps:
       - template: templates-practice/templates-parameters-data-type.yml
-  - job: countString2
-    steps:
-      - template: templates-practice/templates-parameters-data-type.yml
-  - job: displayThroughParameter
-    steps:
-      - template: templates-practice/templates-parameters-data-type.yml
-        parameters:
+        parameter:
           listOfStrings:
-            - 'Anh'
-            - 'Tuan'
+            - 'ANH'
+            - 'TUAN'
+  - job: 'Display values defined'
+    steps:
+      - template: templates-practice/templates-parameters-data-type.yml
