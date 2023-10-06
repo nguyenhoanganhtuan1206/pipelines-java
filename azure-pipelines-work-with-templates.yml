@@ -1,12 +1,14 @@
 jobs:
-  - steps:
+  - job: displayListOfName
+    steps:
       - template: templates-practice/parameters/templates-parameters-define-names.yml
         parameters:
           listOfName:
             - "Anh"
             - "Tuan"
 
-  - steps:
+  - job: displayListOfFruits
+    steps:
       - template: templates-practice/parameters/templates-parameters-define-names.yml
         parameters:
           listOfFruits:
