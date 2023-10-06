@@ -4,13 +4,10 @@ parameters:
   - name: listOfFruits
     type: object
 
-jobs:
-  - job: displayListOfStrings
-    steps:
-      - ${{ each name in parameters.listOfName }}:
-          - script: echo ${{ name }}
-  - job: displayListOfFruits
-    steps:
-      - ${{ each fruitValue in parameters.listOfFruits }}:
-          - ${{ each colorValue in fruitValue.colors }}:
-              - script: echo ${{ fruitValue.fruitName }}, ${{ colorValue }}
+steps:
+  - ${{ each name in parameters.listOfName }}:
+    - script: echo ${{ name }}
+  
+  - ${{ each fruitValue in parameters.listOfFruits }}:
+    - ${{ each colorValue in fruitValue.colors }}:
+        - script: echo ${{ fruitValue.fruitName }}, ${{ colorValue }}
