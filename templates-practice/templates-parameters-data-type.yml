@@ -1,10 +1,13 @@
 parameters:
-  name: listOfStrings
-  type: object
-  default:
-    - 'hi'
-    - 'bar'
+  - name: listOfFruits
+    type: object
+    default:
+      - fruitName: 'apple'
+        colors: ['red', 'green']
+      - fruitName: 'lemon'
+        colors: ['yellow']
 
 steps:
-- ${{ each value in parameters.listOfStrings }}:
-  - script: echo ${{ value }}
+  - ${{ each fruit in parameters.listOfFruits }}:
+      - ${{ each fruitColor in fruit.colors }}:
+          - script
