@@ -2,17 +2,16 @@ trigger:
   - features/working-with-templates
 
 parameters:
-  - name: listOfFruits
-    type: object
-    default:
-      - fruitName: 'apple'
-        colors: ['red', 'green']
-      - fruitName: 'lemon'
-        colors: ['yellow']
-
+  name: listOfFruits
+  type: object
+  default:
+    - fruitName: 'apple'
+      colors: ['red', 'green']
+    - fruitName: 'lemon'
+      colors: ['yellow']
 jobs:
-  - job: displayListOfFruits
+  - job: displayFruits
     steps:
-      - ${{ each fruitValue of parameters.listOfFruits }}:
-          - ${{ each colorValue of fruitValue.colors }}:
+      - ${{ each fruitValue in parameters.listOfFruits }}:
+          - ${{ each colorValue in fruitValue.colors }}:
               - script: echo ${{ fruitValue.fruitName }}, ${{ colorValue }}
