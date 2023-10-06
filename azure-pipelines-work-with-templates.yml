@@ -1,5 +1,7 @@
 trigger:
   - features/working-with-templates
 
-steps:
-  - template: templates-practice/templates-parameters-data-type.yml
+jobs:
+  - job: countString
+    steps:
+      - template: templates-practice/templates-parameters-data-type.yml
