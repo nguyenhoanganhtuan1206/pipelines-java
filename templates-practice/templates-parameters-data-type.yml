@@ -7,5 +7,5 @@ parameters:
     - 'bar'
 
 steps:
-  - ${{ each value in parameters.listOfStrings }}
+  - ${{ each value in parameters.listOfStrings }}:
   - script: echo ${{ value }}
