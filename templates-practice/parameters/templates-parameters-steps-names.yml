@@ -1,0 +1,5 @@
+parameters:
+  - name: listOfName
+    type: object
+  - name: listOfFruits
+    type: object

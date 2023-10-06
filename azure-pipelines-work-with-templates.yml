@@ -6,6 +6,7 @@ jobs:
           listOfName:
             - "Anh"
             - "Tuan"
+      - template: templates-practice/parameters/templates-parameters-run-steps-names.yml
 
   - job: displayListOfFruits
     steps:
@@ -16,3 +17,4 @@ jobs:
               colors: ["red", "green"]
             - fruitName: "lemon"
               colors: ["yellow"]
+      - template: templates-practice/parameters/templates-parameters-run-steps-fruits.yml

@@ -1,0 +1,4 @@
+steps:
+  - ${{ each fruitValue in parameters.listOfFruits }}:
+    - ${{ each colorValue in fruitValue.colors }}:
+        - script: echo ${{ fruitValue.fruitName }}, ${{ colorValue }}
