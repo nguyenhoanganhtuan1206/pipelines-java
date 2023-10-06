@@ -18,3 +18,5 @@ jobs:
             - fruitName: "lemon"
               colors: ["yellow"]
       - template: templates-practice/parameters/templates-parameters-run-steps-fruits.yml
+        parameters:
+          listOfFruits: ${{ parameters.listOfFruits }}
