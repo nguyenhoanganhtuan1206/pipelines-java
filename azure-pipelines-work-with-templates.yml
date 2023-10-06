@@ -1,10 +1,2 @@
-jobs:
-  - template: templates/azure-templates-params.yml
-    parameters:
-      name: Linux
-      vmImage: 'linux-latest'
-
-  - template: templates/azure-templates-params.yml
-    parameters:
-      name: Windows
-      vmImage: 'windows-latest'
+steps:
+  - templates: templates-practice/templates-parameters-data-type.yml

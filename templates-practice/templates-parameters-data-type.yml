@@ -1,0 +1,11 @@
+parameters:
+  name: listOfStrings
+  type: object
+  default:
+    - 0
+    - 'hi'
+    - 'bar'
+
+steps:
+  - ${{ each value in listOfStrings }}
+  - script: echo ${{ value }}
