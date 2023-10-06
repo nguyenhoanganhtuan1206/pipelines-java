@@ -2,13 +2,13 @@ trigger:
   - features/working-with-templates
 
 jobs:
-  - job: 'Display my name'
+  - job: displayMyName
     steps:
       - template: templates-practice/templates-parameters-data-type.yml
         parameters:
           listOfStrings:
             - 'ANH'
             - 'TUAN'
-  - job: 'Display values defined'
+  - job: displayValueDefined
     steps:
       - template: templates-practice/templates-parameters-data-type.yml
