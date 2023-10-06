@@ -1,15 +1,17 @@
-trigger:
-  - features/working-with-templates
-
 jobs:
   - job: displayListOfStrings
     steps:
-      - step:
-        - template: templates-practice/parameters/templates-parameters-define-names.yml
-          parameters:
-            listOfStrings:
-              - 'Anh'
-              - 'Tuan'
-      - step:
-        - ${{ each name in parameters.listOfStrings }}:
-            - script: echo ${{ name }}
+      - template: templates-practice/parameters/templates-parameters-define-names.yml
+        parameters:
+          listOfStrings:
+            - "Anh"
+            - "Tuan"
+  - job: displayListOfFruits
+    steps:
+      - template: templates-practice/parameters/templates-parameters-define-names.yml
+        parameters:
+          listOfFruits:
+            - fruitName: "apple"
+              colors: ["red", "green"]
+            - fruitName: "lemon"
+              colors: ["yellow"]

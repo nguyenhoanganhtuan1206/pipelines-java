@@ -1,5 +1,12 @@
 parameters:
-  - name: listOfStrings
+  - name: listOfName
     type: object
   - name: listOfFruits
     type: object
+
+steps:
+  - ${{ each name of parameters.listOfName }}:
+      - script: echo ${{ name }}
+  - ${{ each fruitValue in parameters.listOfFruits }}:
+      - ${{ each colorValue in fruitValue.colors }}:
+          - script: echo ${{ fruitValue.fruitName }}, ${{ colorValue }}
