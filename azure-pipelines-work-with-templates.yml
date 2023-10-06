@@ -1,2 +1,5 @@
+trigger:
+  - features/working-with-templates
+
 steps:
   - template: templates-practice/templates-parameters-data-type.yml
