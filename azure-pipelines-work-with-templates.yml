@@ -5,3 +5,13 @@ jobs:
   - job: countString
     steps:
       - template: templates-practice/templates-parameters-data-type.yml
+  - job: countString2
+    steps:
+      - template: templates-practice/templates-parameters-data-type.yml
+  - job: displayThroughParameter
+    steps:
+      - template: templates-practice/templates-parameters-data-type.yml
+        parameters:
+          listOfStrings:
+            - 'Anh'
+            - 'Tuan'
