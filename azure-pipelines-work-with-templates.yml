@@ -3,7 +3,7 @@ jobs:
     steps:
       - template: templates-practice/parameters/templates-parameters-define-names.yml
         parameters:
-          listOfStrings:
+          listOfName:
             - "Anh"
             - "Tuan"
   - job: displayListOfFruits
