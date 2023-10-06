@@ -13,6 +13,6 @@ parameters:
 jobs:
   - job: displayListOfFruits
     steps:
-      - ${{ each fruitValue of listOfFruits.fruitName }}:
+      - ${{ each fruitValue of parameters.listOfFruits }}:
           - ${{ each colorValue of fruitValue.colors }}:
               - script: echo ${{ fruitValue.fruitName }}, ${{ colorValue }}
