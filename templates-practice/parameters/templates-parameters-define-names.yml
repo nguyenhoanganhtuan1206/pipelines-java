@@ -5,7 +5,7 @@ parameters:
     type: object
 
 steps:
-  - ${{ each name of parameters.listOfName }}:
+  - ${{ each name in parameters.listOfName }}:
       - script: echo ${{ name }}
   - ${{ each fruitValue in parameters.listOfFruits }}:
       - ${{ each colorValue in fruitValue.colors }}:
