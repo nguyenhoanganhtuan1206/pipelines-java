@@ -5,7 +5,7 @@ jobs:
   - job: 'Display my name'
     steps:
       - template: templates-practice/templates-parameters-data-type.yml
-        parameter:
+        parameters:
           listOfStrings:
             - 'ANH'
             - 'TUAN'
